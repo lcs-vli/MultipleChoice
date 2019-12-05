@@ -59,6 +59,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="Check Student Answers"/>
+                                <connections>
+                                    <action selector="checkAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gyP-Ks-c8K"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="omK-EO-YoC">
                                 <rect key="frame" x="58" y="418" width="299" height="108"/>
@@ -72,6 +75,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="correctAnswerString" destination="zHd-QB-GHX" id="2Ik-GD-4VN"/>
+                        <outlet property="numberOfQuestions" destination="J4x-Ul-7Hh" id="x4q-Ty-PJy"/>
+                        <outlet property="outputResult" destination="omK-EO-YoC" id="RLJ-ih-8xe"/>
+                        <outlet property="studentAnswerString" destination="1gk-HD-98K" id="2Ll-1S-exA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
