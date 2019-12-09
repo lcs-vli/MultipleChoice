@@ -43,12 +43,46 @@ class ViewController: UIViewController {
             return
         }
         
-        //give output
-        analyze()
-    }
-    
-    func analyze(){
+        let possibleAnswer = "ABCDE"
         
+        //check for characters other than ABCDE in student answer
+        for checkEachStudentAnswer in studentAnswer{
+            guard possibleAnswer.contains(checkEachStudentAnswer) else {
+                outputResult.text = "Student answers contains invalid choices. Please ensure that only characters A, B, C, D, E are ever used."
+                return
+            }
+        }
+        //check for characters other than ABCDE in correct answer
+        for checkEachCorrectAnser in correctAnswer{
+            guard possibleAnswer.contains(checkEachCorrectAnser) else {
+                outputResult.text = "Correct answers contains invalid choices. Please ensure that only characters A, B, C, D, E are ever used."
+                return
+            }
+        }
+    
+        //set the index as -1
+        var index = -1
+        
+        //set the correct answer right now as 0
+        var correctAnwserNumber = 0
+        
+        //literate over each character in student answer and check if the character is the same as the character in the same position in correct answer
+        for eachStudentAnswer in studentAnswer{
+            
+            //increase the index by 1
+            index += 1
+            
+            //get the character in the correct answer for the same position as student answer
+            let theNthCorrectAnswer = correctAnswer.index(correctAnswer.startIndex, offsetBy: index)
+            
+            if eachStudentAnswer == correctAnswer[theNthCorrectAnswer]{
+                correctAnwserNumber += 1
+            }else{
+                correctAnwserNumber += 0
+            }
+        }
+        
+        outputResult.text = "The student got \(correctAnwserNumber) questions correctly"
     }
 }
 
