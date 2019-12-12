@@ -75,6 +75,7 @@ class ViewController: UIViewController {
             //get the character in the correct answer for the same position as student answer
             let theNthCorrectAnswer = correctAnswer.index(correctAnswer.startIndex, offsetBy: index)
             
+            //check if the student answer equals the correct answer
             if eachStudentAnswer == correctAnswer[theNthCorrectAnswer]{
                 correctAnwserNumber += 1
             }else{
@@ -82,6 +83,7 @@ class ViewController: UIViewController {
             }
         }
         
+        //print out the result
         outputResult.text = "The student got \(correctAnwserNumber) questions correctly"
     }
 }
